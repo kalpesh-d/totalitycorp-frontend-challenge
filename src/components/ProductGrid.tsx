@@ -15,7 +15,7 @@ export interface Product {
     image: string;
     price: string;
     rating: Rating;
-  }
+}
 
 function ProductGrid() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -33,7 +33,7 @@ function ProductGrid() {
       <SimpleGrid 
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
         padding="10px"
-        spacing={10}
+        spacing={5}
       >
           {products.map(product => (
             <ProductCard key={product.id} product={product} />

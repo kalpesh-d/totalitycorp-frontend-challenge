@@ -8,7 +8,7 @@ interface Props {
 
 function ProductCard({ product }:Props) {
   return (
-    <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
+    <Box width='300px' borderWidth='1.5px' borderRadius='lg' overflow='hidden' height='max-content'>
       <Image src={product.image} alt={product.title} pt={8} px={50}/>
       
       <Box p='6'>
