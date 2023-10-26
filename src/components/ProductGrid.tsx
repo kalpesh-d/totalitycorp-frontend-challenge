@@ -1,10 +1,20 @@
 import { useState, useEffect} from 'react'
 import apiClient from '../services/api-client';
-import { Text } from '@chakra-ui/react';
+import { SimpleGrid, Text } from '@chakra-ui/react';
+import ProductCard from './ProductCard';
 
-interface Product {
+interface Rating {
+  rate: number;
+  count: number;
+}
+
+export interface Product {
     id: number;
     title: string;
+    category: string;
+    image: string;
+    price: string;
+    rating: Rating;
   }
 
 function ProductGrid() {
@@ -15,14 +25,20 @@ function ProductGrid() {
     apiClient.get('/products')
       .then(resp => setProducts(resp.data))
       .catch(err => setError(err.message))
-  })
+  }, [])
   
   return (
     <>
       {error && <Text>{error}</Text>}
-      <ul>
-          {products.map(product => <li key={product.id}>{product.title}</li>)}
-      </ul>
+      <SimpleGrid 
+        columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
+        padding="10px"
+        spacing={10}
+      >
+          {products.map(product => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+      </SimpleGrid>
     </>
   )
 }
