@@ -1,17 +1,13 @@
-import { Grid, GridItem } from "@chakra-ui/react"
-import NavBar from "./components/NavBar"
-import ProductGrid from "./components/ProductGrid"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Home from "./pages/Home"
 
 function App() {
   return (
-    <Grid templateAreas={`"nav" "main"`}>
-      <GridItem area='nav'>
-        <NavBar />
-      </GridItem>
-      <GridItem area='main'>
-        <ProductGrid />
-      </GridItem>
-    </Grid>    
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
