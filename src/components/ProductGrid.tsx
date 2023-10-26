@@ -32,7 +32,8 @@ function ProductGrid() {
       {error && <Text>{error}</Text>}
       <SimpleGrid 
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-        padding="10px"
+        paddingLeft="150px"
+        paddingRight="150px"
         spacing={5}
       >
           {products.map(product => (
