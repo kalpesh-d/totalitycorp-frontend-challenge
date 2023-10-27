@@ -5,10 +5,8 @@ import ProductGrid from "../components/ProductGrid"
 function Home() {
   return (
     <Grid templateAreas={`"nav" "main"`}>
-      <GridItem area='nav'>
-        <NavBar />
-      </GridItem>
-      <GridItem area='main'>
+      <NavBar />
+      <GridItem area='main' mt='32'>
         <ProductGrid />
       </GridItem>
     </Grid>  

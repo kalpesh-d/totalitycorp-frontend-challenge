@@ -1,4 +1,4 @@
-import { Box, Image } from "@chakra-ui/react"
+import { Box, Button, Image } from "@chakra-ui/react"
 import { Product } from "./ProductGrid"
 import { StarIcon } from "@chakra-ui/icons"
 
@@ -17,8 +17,8 @@ function ProductCard({ product }:Props) {
         </Box>
         <Box fontWeight='semibold' as='h4' lineHeight='tight' ml='2' noOfLines={1}>{product.title}</Box>
         <Box ml='2'>${product.price}</Box>
-        
-        <Box display='flex' mt='2' ml='2' alignItems='center'>
+
+        <Box display='flex' mt='1' ml='2' alignItems='center'>
           {Array(5)
             .fill('')
             .map((_, i) => (
@@ -32,6 +32,9 @@ function ProductCard({ product }:Props) {
             {product.rating.count} reviews
           </Box>
         </Box>
+          <Button mt='3' ml='2' variant='solid' size='sm' colorScheme='teal'>
+            Add to cart
+          </Button>
       </Box>
     </Box>
   )
